@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class MergeSortTest {
+
+    public static void main(String[] args) {
+        ArrayList<String> dwarfs = new ArrayList<>(Arrays.asList("Dopey", "Doc", "Sleepy", "Happy", "Bashful", "Sneezy", "Grumpy"));
+
+        MergeSort.mergeSort(dwarfs);
+
+        System.out.println("Sorted list of dwarfs: " + dwarfs);
+
+        
+        for (int i = 1; i < dwarfs.size(); i++) {
+            String prevDwarf = dwarfs.get(i - 1);
+            String currDwarf = dwarfs.get(i);
+            if (prevDwarf.compareTo(currDwarf) > 0) {
+                System.out.println("List not sorted in alphabetical order");
+                return;
+            }
+        }
+        System.out.println("List sorted in alphabetical order");
+    }
+}
